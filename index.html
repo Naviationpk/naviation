@@ -54,6 +54,7 @@ header {
     -webkit-backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
+<h3 class="typewrite" data-period="2000" data-type='[ "Navigating now, Innovating next", "Bridging Digital Gaps", "Empowering Youth in Pakistan" ]'></h3>
 
         nav {
             display: flex;
@@ -66,6 +67,24 @@ header {
             font-weight: 700;
             color: var(--primary);
         }
+<div class="logo">
+  <a href="index.html"><img src="logo.png" alt="Naviation Logo"></a>
+</div>
+header {
+  background-color: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--primary);
+  box-shadow: 0 2px 10px rgba(255, 51, 51, 0.2);
+}
+nav ul li a {
+  color: var(--text);
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: var(--primary);
+}
 
         .nav-toggle {
             display: none;
@@ -515,6 +534,21 @@ header {
 <li><a href="#about"><i class="fas fa-info-circle"></i> About</a></li>
 <li><a href="#join"><i class="fas fa-users"></i> Programs</a></li>
 <li><a href="#contact"><i class="fas fa-envelope-open-text"></i> Contact</a></li>
+.typewrite > .wrap {
+  border-right: 0.08em solid var(--primary);
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo img {
+  height: 50px;
+  width: auto;
+  display: block;
+}
 
     </style>
 </head>
@@ -530,6 +564,59 @@ header {
             </div>
         </div>
     </div>
+<script>
+var TxtType = function(el, toRotate, period) {
+  this.toRotate = toRotate;
+  this.el = el;
+  this.loopNum = 0;
+  this.period = parseInt(period, 10) || 2000;
+  this.txt = '';
+  this.tick();
+  this.isDeleting = false;
+};
+
+TxtType.prototype.tick = function() {
+  var i = this.loopNum % this.toRotate.length;
+  var fullTxt = this.toRotate[i];
+
+  if (this.isDeleting) {
+    this.txt = fullTxt.substring(0, this.txt.length - 1);
+  } else {
+    this.txt = fullTxt.substring(0, this.txt.length + 1);
+  }
+
+  this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+  var that = this;
+  var delta = 200 - Math.random() * 100;
+
+  if (this.isDeleting) { delta /= 2; }
+
+  if (!this.isDeleting && this.txt === fullTxt) {
+    delta = this.period;
+    this.isDeleting = true;
+  } else if (this.isDeleting && this.txt === '') {
+    this.isDeleting = false;
+    this.loopNum++;
+    delta = 500;
+  }
+
+  setTimeout(function() {
+    that.tick();
+  }, delta);
+};
+
+window.onload = function() {
+  var elements = document.getElementsByClassName('typewrite');
+  for (var i=0; i<elements.length; i++) {
+    var toRotate = elements[i].getAttribute('data-type');
+    var period = elements[i].getAttribute('data-period');
+    if (toRotate) {
+      new TxtType(elements[i], JSON.parse(toRotate), period);
+    }
+  }
+};
+</script>
 
     <header>
         <div class="container">
