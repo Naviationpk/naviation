@@ -481,6 +481,36 @@ nav ul li a:hover::after {
             gap: 2rem;
             text-align: left;
         }
+/* === Custom Logo Loading Animation === */
+.loading-logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading-logo {
+    width: 120px;
+    height: 120px;
+    opacity: 0;
+    animation: spin 2s linear infinite, pulse 1.8s ease-in-out infinite, fadeIn 0.5s ease forwards;
+}
+
+/* Rotate continuously */
+@keyframes spin {
+    0%   { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Pulse effect */
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50%      { transform: scale(1.1); }
+}
+
+/* Fade in once */
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
 
         .footer-section h6 {
             color: var(--primary);
@@ -598,18 +628,13 @@ nav {
 </head>
 <body>
     <!-- Loading Animation -->
-    <div id="loading-overlay" class="loading-overlay">
-        <div class="loading-content">
-            <div class="loading-text">NAVIATION</div>
-            <div class="loading-dots">
-		    
-
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
+    <!-- Loading Animation with Logo -->
+<div id="loading-overlay" class="loading-overlay">
+    <div class="loading-logo-container">
+        <img src="weblogo.png.png" alt="Loading Logo" class="loading-logo">
     </div>
+</div>
+
 <h3 class="typewrite" data-period="2000" data-type='[ "Navigating now, Innovating next", "Bridging Digital Gaps", "Empowering Youth in Pakistan" ]'></h3>
 	
 <script>
