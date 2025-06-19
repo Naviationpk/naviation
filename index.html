@@ -261,15 +261,18 @@
         }
 
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+	    .fade-in-up:nth-child(1) { animation-delay: 0.1s; }
+.fade-in-up:nth-child(2) { animation-delay: 0.3s; }
+.fade-in-up:nth-child(3) { animation-delay: 0.5s; }
 
         .fade-in-up {
             animation: fadeInUp 1s ease-out;
@@ -532,25 +535,22 @@
 <br>
 
                 <div class="grid">
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdk7dGGj1DVLd1LQJjnhUR9IEcHO60iQlpFp18bByYQOkTXaw/viewform?usp=sf_link" class="btn fade-in-up">
-                        <h3>Volunteer</h3><br>
-
-                        <p>Join our team to empower communities, support underprivileged children, and drive impactful change across Pakistan. Together, we can make a difference that lasts.<p><br>
-
-                      <b> Click here to Volunteer</b> </p></p>
-                    </a>
-                    <a href="ambassadors.html" class="btn fade-in-up">
-                        <h3>Ambassador Program</h3><br>
-                        <p>Join our student-led initiative to inspire change through school clubs, projects, and community impact. Be the voice of change!<p><br>
-<b> Click here to apply</p></p>
-                    </a>
-			<a href="https://forms.gle/wbfB4LLNYDsgdpyV6" class="btn fade-in-up">
-    <h3>Membership Program</h3>
-    <p>Apply now to become part of our departments — from design and media to outreach and research, we’re looking for passionate individuals ready to grow and innovate.<p><b> Click here to join</b></p></p>
-</a>
-                   
-                </div>
-            </div>
+    <div class="card fade-in-up">
+        <h3>Volunteer</h3>
+        <p>Join our team to empower communities, support underprivileged children, and drive impactful change across Pakistan. Together, we can make a difference that lasts.</p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdk7dGGj1DVLd1LQJjnhUR9IEcHO60iQlpFp18bByYQOkTXaw/viewform?usp=sf_link" class="btn">Apply Now</a>
+    </div>
+    <div class="card fade-in-up">
+        <h3>Ambassador Program</h3>
+        <p>Join our student-led initiative to inspire change through school clubs, projects, and community impact. Be the voice of change!</p>
+        <a href="https://forms.gle/cZPiKdD2u1921XAc7" class="btn">Apply Now</a>
+    </div>
+    <div class="card fade-in-up">
+        <h3>Membership Program</h3>
+        <p>Apply now to become part of our departments — from design and media to outreach and research, we’re looking for passionate individuals ready to grow and innovate.</p>
+        <a href="https://forms.gle/baXpb1SdxMeYCjKJ8" class="btn">Apply Now</a>
+    </div>
+</div>
         </section>
     
         <section id="contact">
