@@ -66,18 +66,52 @@ header {
             font-weight: 700;
             color: var(--primary);
         }
-<div class="logo">
-  <a href="index.html" style="display: flex; align-items: center; gap: 10px;">
-    <img src="logo.png" alt="NaviationLogo" height="50" style="border-radius: 10px;">
-    <span style="color: var(--primary); font-weight: 700; font-size: 1.4rem;">Naviation</span>
+<div class="nav-logo">
+  <a href="index.html">
+    <img src="logo.png" alt="Naviation Logo" />
+    <span>Naviation</span>
   </a>
 </div>
+
 header {
   background-color: rgba(0, 0, 0, 0.85);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--primary);
   box-shadow: 0 2px 10px rgba(255, 51, 51, 0.2);
 }
+.nav-logo {
+  display: flex;
+  align-items: center;
+}
+
+.nav-logo a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 1.5rem;
+  gap: 12px;
+}
+
+.nav-logo img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 3px 10px rgba(255, 51, 51, 0.2);
+}
+@media (max-width: 768px) {
+  .nav-logo a span {
+    font-size: 1.2rem;
+  }
+
+  .nav-logo img {
+    height: 40px;
+    width: 40px;
+  }
+}
+
 nav ul li a {
   color: var(--text);
   position: relative;
