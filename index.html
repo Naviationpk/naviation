@@ -54,7 +54,6 @@ header {
     -webkit-backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
-<h3 class="typewrite" data-period="2000" data-type='[ "Navigating now, Innovating next", "Bridging Digital Gaps", "Empowering Youth in Pakistan" ]'></h3>
 
         nav {
             display: flex;
@@ -68,7 +67,10 @@ header {
             color: var(--primary);
         }
 <div class="logo">
-  <a href="index.html"><img src="logo.png" alt="Naviation Logo"></a>
+  <a href="index.html" style="display: flex; align-items: center; gap: 10px;">
+    <img src="logo.png" alt="NaviationLogo" height="50" style="border-radius: 10px;">
+    <span style="color: var(--primary); font-weight: 700; font-size: 1.4rem;">Naviation</span>
+  </a>
 </div>
 header {
   background-color: rgba(0, 0, 0, 0.85);
@@ -516,6 +518,9 @@ nav ul li a:hover::after {
     transform: translateY(-10px);
     animation: slideDown 0.5s ease forwards;
 }
+.typewrite > .wrap {
+  border-right: 0.08em solid var(--primary);
+}
 
 nav ul li:nth-child(1) { animation-delay: 0.2s; }
 nav ul li:nth-child(2) { animation-delay: 0.4s; }
@@ -558,12 +563,16 @@ nav {
         <div class="loading-content">
             <div class="loading-text">NAVIATION</div>
             <div class="loading-dots">
+		    
+
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
         </div>
     </div>
+<h3 class="typewrite" data-period="2000" data-type='[ "Navigating now, Innovating next", "Bridging Digital Gaps", "Empowering Youth in Pakistan" ]'></h3>
+	
 <script>
 var TxtType = function(el, toRotate, period) {
   this.toRotate = toRotate;
@@ -644,19 +653,17 @@ window.onload = function() {
     </header>
 
     <main>
-        <section id="home">
-            <div class="container">
-				<br><br>
-                <br>
-                <img src="text logo.png" height="1000" width="1000" alt="Naviation NGO Logo">
-				<br><br>
-				<h3 class="fade-in-up">Navigating now, Innovating next</h3>
-				<br>
-                <a href="#about" class="btn fade-in-up">About Us</a>
-                <a href="#join" class="btn fade-in-up">Programs</a>
-				<a href="https://docs.google.com/forms/d/e/1FAIpQLSdk7dGGj1DVLd1LQJjnhUR9IEcHO60iQlpFp18bByYQOkTXaw/viewform?usp=sf_link" class="btn fade-in-up">Volunteer</a>
-            </div>
-        </section>
+        <section id="home" style="height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://source.unsplash.com/random/1600x900?technology,community') no-repeat center center/cover;">
+  <div class="container fade-in-up">
+    <img src="logo.png" alt="Naviation Logo" style="height: 120px; border-radius: 20px; margin-bottom: 1.5rem;">
+    <h1 style="font-size: 3rem; font-weight: 700; color: var(--primary); margin-bottom: 1rem;">Naviation Pakistan</h1>
+    <h2 style="font-size: 1.5rem; color: var(--text); margin-bottom: 2rem;" id="typewriter-text">Navigating Possibilities...</h2>
+    <a href="#about" class="btn fade-in-up">About Us</a>
+    <a href="#join" class="btn fade-in-up">Programs</a>
+    <a href="https://docs.google.com/forms/d/e/..." class="btn fade-in-up">Volunteer</a>
+  </div>
+</section>
+
 
         <section id="about">
             <div class="container">
