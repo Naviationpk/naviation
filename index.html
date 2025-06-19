@@ -66,12 +66,20 @@ header {
             font-weight: 700;
             color: var(--primary);
         }
-<div class="nav-logo">
-  <a href="index.html">
-    <img src="logo.png" alt="Naviation Logo" />
-    <span>Naviation</span>
+<div class="logo" style="display: flex; align-items: center; justify-content: flex-start;">
+  <a href="index.html" style="display: flex; align-items: center;">
+    <img src="logo.png" alt="Naviation NGO Logo" height="50" style="margin-right: 10px;">
+    <span style="color: var(--primary); font-weight: 700; font-size: 1.2rem;">Naviation</span>
   </a>
 </div>
+.logo {
+  flex: 1;
+  justify-content: flex-start;
+}
+nav {
+  justify-content: space-between;
+}
+
 
 header {
   background-color: rgba(0, 0, 0, 0.85);
